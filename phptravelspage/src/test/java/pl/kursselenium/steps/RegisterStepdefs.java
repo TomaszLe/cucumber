@@ -1,6 +1,7 @@
 package pl.kursselenium.steps;
 
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pl.kursselenium.models.BaseTest;
 import pl.kursselenium.models.Customer;
@@ -32,5 +33,15 @@ public class RegisterStepdefs extends BaseTest {
     public void userRegistersInApplication() {
         Customer customer = new Customer();
         new SignUpPage(driver).fillTheForm(customer);
+    }
+
+    @Then("User should be redirected to logged user page")
+    public void userShouldBeRedirectedToLoggedUserPage() {
+        System.out.println("Logged User");
+    }
+
+    @Then("An Error will be displayed {string}, user remains on register page")
+    public void anErrorWillBeDisplayedUserRemainsOnRegisterPage(String arg0) {
+        System.out.println("Error occurred");
     }
 }

@@ -1,4 +1,4 @@
-package pl.kursselenium.models;
+package pl.kursselenium.steps;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
@@ -7,7 +7,7 @@ import pl.kursselenium.utils.DriverFactory;
 
 import java.util.concurrent.TimeUnit;
 
-public class BaseTest {
+public class Hooks {
     protected WebDriver driver;
 
     @BeforeMethod
