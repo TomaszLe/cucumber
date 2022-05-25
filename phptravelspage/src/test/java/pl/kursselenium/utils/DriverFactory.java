@@ -7,16 +7,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
-    public static WebDriver getDriver(String name) {
+    public static WebDriver driver;
 
-        if(name.equals("firefox")) {
-            WebDriverManager.firefoxdriver().setup();
-            return new FirefoxDriver();
-        } else if (name.equals("chrome")) {
+    public static WebDriver getDriver() {
+        if(driver==null) {
             WebDriverManager.chromedriver().setup();
-            return  new ChromeDriver();
-        } else {
-            throw new UnsupportedCommandException("Unsupported browser");
+            driver = new ChromeDriver();
         }
+        return driver;
+    }
+
+    public static void quitDriver(){
+        driver.quit();
+        driver=null;
     }
 }

@@ -8,20 +8,18 @@ import pl.kursselenium.utils.DriverFactory;
 import java.util.concurrent.TimeUnit;
 
 public class Hooks {
-    protected WebDriver driver;
 
     @BeforeMethod
     public void browserSetup(){
-        driver= DriverFactory.getDriver("chrome");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("http://www.kurs-selenium.pl/demo/");
+        DriverFactory.getDriver().manage().window().maximize();
+        DriverFactory.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        DriverFactory.getDriver().get("http://www.kurs-selenium.pl/demo/");
     }
 
 
     @AfterMethod
     public void browserTearDown(){
-        driver.quit();
+        DriverFactory.getDriver().quit();
     }
 
 }

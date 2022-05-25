@@ -3,12 +3,12 @@ package pl.kursselenium.steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pl.kursselenium.models.BaseTest;
 import pl.kursselenium.models.Customer;
 import pl.kursselenium.pages.HomePage;
 import pl.kursselenium.pages.SignUpPage;
+import pl.kursselenium.utils.DriverFactory;
 
-public class RegisterStepdefs extends BaseTest {
+public class RegisterStepdefs {
     protected String email;
 
 
@@ -19,12 +19,12 @@ public class RegisterStepdefs extends BaseTest {
         Customer customer = new Customer();
         customer.setEmail(email);
 
-        new HomePage(driver).openSignupForm();
+        new HomePage(DriverFactory.getDriver()).openSignupForm();
     }
 
     @Given("User with existent email address")
     public void userWithExistentEmailAddress() {
-        new HomePage(driver).openSignupForm();
+        new HomePage(DriverFactory.getDriver()).openSignupForm();
 
     }
 
@@ -32,7 +32,7 @@ public class RegisterStepdefs extends BaseTest {
     @When("User registers in application")
     public void userRegistersInApplication() {
         Customer customer = new Customer();
-        new SignUpPage(driver).fillTheForm(customer);
+        new SignUpPage(DriverFactory.getDriver()).fillTheForm(customer);
     }
 
     @Then("User should be redirected to logged user page")
