@@ -1,15 +1,14 @@
 package pl.kursselenium.steps;
 
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import pl.kursselenium.utils.DriverFactory;
 
 import java.util.concurrent.TimeUnit;
 
 public class Hooks {
 
-    @BeforeMethod
+    @Before
     public void browserSetup(){
         DriverFactory.getDriver().manage().window().maximize();
         DriverFactory.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -17,9 +16,9 @@ public class Hooks {
     }
 
 
-    @AfterMethod
+    @After
     public void browserTearDown(){
-        DriverFactory.getDriver().quit();
+        DriverFactory.quitDriver();
     }
 
 }

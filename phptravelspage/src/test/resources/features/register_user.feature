@@ -14,6 +14,6 @@ Scenario: Registering user with unique email address
 Scenario: Registering user with existent email address
 
   Given User with existent email address
-  When User registers in application
+  When User registers in application with existent email
   Then An Error will be displayed " An account is already registered with your email address", user remains on register page
 

@@ -1,4 +1,4 @@
-package pl.testeroprogramowania;
+package pl.kursselenium;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;

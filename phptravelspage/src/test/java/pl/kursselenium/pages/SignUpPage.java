@@ -45,7 +45,7 @@ public class SignUpPage {
         firstNameInput.sendKeys(customer.getFirstName());
         lastNameInput.sendKeys(customer.getLastName());
         phoneInput.sendKeys(customer.getPhone());
-        emailInput.sendKeys(customer.getPhone());
+        emailInput.sendKeys(customer.getEmail());
         passwordInput.sendKeys(customer.getPassword());
         confirmPasswordInput.sendKeys(customer.getPassword());
         signUpButton.click();
