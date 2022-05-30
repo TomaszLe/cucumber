@@ -47,12 +47,20 @@ public class RegisterStepdefs {
     }
     @When("User registers in application with existent email")
     public void userRegistersInApplicationWithExistentEmail() {
-        new HomePage(DriverFactory.getDriver()).openSignupForm();
+
+        new HomePage(DriverFactory.getDriver())
+                            .openSignupForm()
+                            .fillTheFormWithExistentEmail(customer);
+
+
+
     }
 
     @Then("An Error will be displayed {string}, user remains on register page")
-    public void anErrorWillBeDisplayedUserRemainsOnRegisterPage(String arg0) {
-        System.out.println("Error occurred");
+    public void anErrorWillBeDisplayedUserRemainsOnRegisterPage(String message) {
+        WebElement signUpError = new SignUpPage(DriverFactory.getDriver()).getSignupErrors();
+        Assert.assertEquals(signUpError.getText(), message);
+
     }
 
 
