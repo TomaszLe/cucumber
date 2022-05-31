@@ -15,5 +15,5 @@ Scenario: Registering user with existent email address
 
   Given User with existent email address
   When User registers in application with existent email
-  Then An Error will be displayed "Email Already Exists.", user remains on register page
+  Then An Error will be displayed "Email Already Exists."
 

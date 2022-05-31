@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 public class Hooks {
 
     @Before
-    public void browserSetup(){
+    public void browserSetup() {
         DriverFactory.getDriver().manage().window().maximize();
         DriverFactory.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         DriverFactory.getDriver().get("http://www.kurs-selenium.pl/demo/");
@@ -17,7 +17,7 @@ public class Hooks {
 
 
     @After
-    public void browserTearDown(){
+    public void browserTearDown() {
         DriverFactory.quitDriver();
     }
 

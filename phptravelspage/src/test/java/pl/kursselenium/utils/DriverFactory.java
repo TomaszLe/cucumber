@@ -10,15 +10,15 @@ public class DriverFactory {
     public static WebDriver driver;
 
     public static WebDriver getDriver() {
-        if(driver==null) {
+        if (driver == null) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         }
         return driver;
     }
 
-    public static void quitDriver(){
+    public static void quitDriver() {
         driver.quit();
-        driver=null;
+        driver = null;
     }
 }

@@ -35,7 +35,7 @@ public class RegisterStepdefs {
     public void userShouldBeRedirectedToLoggedUserPage() {
         WebElement loggedUserHeading = new LoggedUserPage(DriverFactory.getDriver()).getLoggedUserHeading();
 
-        Assert.assertEquals(loggedUserHeading.getText(), "Hi, "+customer.getFirstName()+" "+ customer.getLastName());
+        Assert.assertEquals(loggedUserHeading.getText(), "Hi, " + customer.getFirstName() + " " + customer.getLastName());
     }
 
 
@@ -45,18 +45,18 @@ public class RegisterStepdefs {
 
 
     }
+
     @When("User registers in application with existent email")
     public void userRegistersInApplicationWithExistentEmail() {
 
         new HomePage(DriverFactory.getDriver())
-                            .openSignupForm()
-                            .fillTheFormWithExistentEmail(customer);
-
+                .openSignupForm()
+                .fillTheFormWithExistentEmail(customer);
 
 
     }
 
-    @Then("An Error will be displayed {string}, user remains on register page")
+    @Then("An Error will be displayed {string}")
     public void anErrorWillBeDisplayedUserRemainsOnRegisterPage(String message) {
         WebElement signUpError = new SignUpPage(DriverFactory.getDriver()).getSignupErrors();
         Assert.assertEquals(signUpError.getText(), message);

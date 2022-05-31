@@ -18,12 +18,12 @@ public class HomePage {
 
     private WebDriver driver;
 
-    public HomePage(WebDriver driver){
+    public HomePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
-        this.driver=driver;
+        this.driver = driver;
     }
 
-    public SignUpPage openSignupForm(){
+    public SignUpPage openSignupForm() {
         myAccountButtonLink.stream().filter(WebElement::isDisplayed)
                 .findFirst().ifPresent(WebElement::click);
         signUpLink.get(1).click();

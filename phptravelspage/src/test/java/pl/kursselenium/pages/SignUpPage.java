@@ -7,7 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 import pl.kursselenium.models.Customer;
 
 
-
 public class SignUpPage {
 
     @FindBy(name = "firstname")
@@ -38,10 +37,10 @@ public class SignUpPage {
 
     public SignUpPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
-        this.driver=driver;
+        this.driver = driver;
     }
 
-    public LoggedUserPage fillTheForm(Customer customer){
+    public LoggedUserPage fillTheForm(Customer customer) {
         firstNameInput.sendKeys(customer.getFirstName());
         lastNameInput.sendKeys(customer.getLastName());
         phoneInput.sendKeys(customer.getPhone());
@@ -53,7 +52,7 @@ public class SignUpPage {
         return new LoggedUserPage(driver);
     }
 
-    public SignUpPage fillTheFormWithExistentEmail(Customer customer){
+    public SignUpPage fillTheFormWithExistentEmail(Customer customer) {
         firstNameInput.sendKeys(customer.getFirstName());
         lastNameInput.sendKeys(customer.getLastName());
         phoneInput.sendKeys(customer.getPhone());
@@ -65,7 +64,7 @@ public class SignUpPage {
         return this;
     }
 
-    public WebElement getSignupErrors(){
+    public WebElement getSignupErrors() {
         return signUpErrors;
     }
 }

@@ -13,10 +13,11 @@ public class LoggedUserPage {
     private WebDriver driver;
 
     public LoggedUserPage(WebDriver driver) {
-        PageFactory.initElements(driver,this);
-        this.driver=driver;
+        PageFactory.initElements(driver, this);
+        this.driver = driver;
     }
-    public WebElement getLoggedUserHeading(){
+
+    public WebElement getLoggedUserHeading() {
         return loggedUserHeading;
     }
 }
